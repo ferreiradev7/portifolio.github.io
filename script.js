@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     initMobileNav();
     initHeaderState();
-    initScrollProgress();
     initBackToTop();
     initRevealAnimations();
     initSectionTracking();
@@ -47,23 +46,6 @@ function initSmoothScroll() {
             target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
         });
     });
-}
-
-function initScrollProgress() {
-    const bar = document.getElementById("scroll-progress");
-    if (!bar) return;
-
-    const updateProgress = () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-
-        bar.style.width = progress + "%";
-        bar.classList.toggle("is-visible", scrollTop > 80);
-    };
-
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    updateProgress();
 }
 
 function initBackToTop() {
