@@ -1,124 +1,409 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Portfólio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Humberto Pimenta, Analista de IA e Analytics na EBS IT, com atuação em desenvolvimento, dados, automação e inteligência artificial.">
+    <meta name="theme-color" content="#080b0e">
+    <title>Humberto Pimenta | Analista de IA e Analytics</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-       
-    </style>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <div class="container">
-        <header>
-            <div class="foto-perfil"></div>
-            <div class="info-pessoal">
-                <h1>Humberto Pimenta</h1>
-                <p>Desenvolvedor de Software</p>
+    <div class="page-shell">
+        <header class="site-header" id="topo">
+            <div class="container header__inner">
+                <a class="brand" href="#hero" aria-label="Ir para o início do portfólio">
+                    <span class="brand__mark">HP</span>
+                    <span class="brand__text">Humberto Pimenta</span>
+                </a>
+
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menu">
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
+                </button>
+
+                <nav class="site-nav" id="primary-navigation" aria-label="Navegação principal">
+                    <a class="site-nav__link" href="#sobre">Sobre</a>
+                    <a class="site-nav__link" href="#experiencia">Experiência</a>
+                    <a class="site-nav__link" href="#projetos">Projetos</a>
+                    <a class="site-nav__link" href="#habilidades">Habilidades</a>
+                    <a class="site-nav__link" href="#qualidade">Diferenciais</a>
+                    <a class="site-nav__link" href="#contato">Contato</a>
+                </nav>
             </div>
         </header>
 
-        <nav>
-            <a href="#sobre" class="botao">Sobre Mim</a>
-            <a href="#projetos" class="botao">Projetos</a>
-            <a href="#habilidades" class="botao">Habilidades</a>
-            <a href="#qualidade" class="botao">Qualidades</a>
-            <a href="#contato" class="botao">Contato</a>
-        </nav>
-
-        <main>
-            <section id="sobre">
-                <h2>Sobre Mim</h2>
-                <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
-                    Olá, me chamo Humberto Pimenta e tenho 18 anos, sou desenvolvedor de software e atualmente curso
-                    Bacharelado em Sistemas de Informação na Universidade Federal de Uberlândia e estou no 3° período
-                </p>
-            </section>
-
-            <section id="projetos">
-                <h2>Projetos</h2>
-                <div class="cards-container">
-
-                    <div class="card">
-                        <h3>Sistema Clínica Veterinária</h3>
-                        <p>Neste projeto, desenvolvemos um sistema para gestão de uma Clínica Veterinária, com
-                            funcionalidades como cadastro de consultas, geração de relatórios e outras ferramentas
-                            administrativas.
+        <main id="conteudo">
+            <section class="section hero" id="hero">
+                <div class="container hero__grid">
+                    <div class="hero__content reveal">
+                        <p class="section-label">Portfólio profissional</p>
+                        <h1>Analista de IA e Analytics com foco em <span class="accent-text">desenvolvimento, dados e automação</span>.</h1>
+                        <p class="hero__lead">
+                            Atuo na EBS IT em modelo remoto, contribuindo para frentes ligadas a inteligência artificial, analytics e eficiência operacional.
+                            Minha trajetória combina prática em ambiente profissional, formação em Sistemas de Informação na UFU e construção contínua de repertório técnico.
                         </p>
-                        <a href="https://github.com/ferreiradev7/sistema-clinica-veterinaria" target="_blank"
-                            rel="noopener noreferrer" class="botao">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Ver no GitHub
-                        </a>
+
+                        <div class="hero__actions">
+                            <a class="button button--primary" href="#experiencia">Ver experiência</a>
+                            <a class="button button--secondary" href="#contato">Conversar sobre oportunidades</a>
+                        </div>
+
+                        <ul class="hero__highlights" aria-label="Destaques do perfil">
+                            <li>
+                                <strong>EBS IT</strong>
+                                <span>Atuação atual em IA e Analytics</span>
+                            </li>
+                            <li>
+                                <strong>Dados + IA</strong>
+                                <span>Interseção entre analytics, automação e tecnologia</span>
+                            </li>
+                            <li>
+                                <strong>UFU</strong>
+                                <span>Sistemas de Informação em formação</span>
+                            </li>
+                        </ul>
                     </div>
 
+                    <article class="hero__panel reveal" aria-label="Resumo profissional">
+                        <div class="hero__photo-frame">
+                            <img class="hero__photo" src="imagens/fotoportifolio.jpg" alt="Retrato de Humberto Pimenta">
+                        </div>
+
+                        <div class="hero__panel-content">
+                            <p class="hero__panel-kicker">Posicionamento</p>
+                            <p class="hero__panel-title">Início de carreira com atuação corporativa já conectada a software, analytics e inteligência artificial aplicada.</p>
+
+                            <ul class="hero__focus-list">
+                                <li>Analista de IA e Analytics na EBS IT</li>
+                                <li>Experiência profissional em contexto remoto</li>
+                                <li>Foco em desenvolvimento, dados, automação e IA</li>
+                                <li>Formação em Sistemas de Informação na Universidade Federal de Uberlândia</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </section>
 
-            <section id="habilidades">
-                <h2>Habilidades</h2>
-                <div class="habilidades-container">
-                    <div class="habilidade">HTML</div>
-                    <div class="habilidade">CSS</div>
-                    <div class="habilidade">C</div>
-                    <div class="habilidade">C++</div>
-                </div>
-            </section>
-
-            <section id="qualidade">
-                <h2>Qualidades</h2>
-                <div class="qualidade-container">
-                    <div class="qualidade">Comunicativo</div>
-                    <div class="qualidade">Bom trabalho em equipe</div>
-                    <div class="qualidade">Aprendizado Rápido</div>
-                </div>
-            </section>
-
-
-            <section id="contato">
-                <h2>Contato</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                    <strong>Gostou do meu trabalho? Vamos conversar!</strong>
-                </p>
-
-                <div class="contato-links">
-                    <a href="https://www.linkedin.com/in/humberto-pimenta" target="_blank" rel="noopener noreferrer"
-                        class="botao">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-
-                    <a href="https://github.com/ferreiradev7" target="_blank" rel="noopener noreferrer" class="botao">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </div>
-
-                <div class="contato-email">
-                    <p>Ou me envie um e-mail:</p>
-                    <div>
-                        <p><strong>humbertopferreiraf@gmail.com</strong></p>
+            <section class="section" id="sobre">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Sobre</p>
+                        <h2>Uma construção de carreira guiada por consistência técnica, clareza e aplicação prática.</h2>
                     </div>
+
+                    <div class="about-grid">
+                        <article class="surface-card reveal">
+                            <p>
+                                Minha trajetória está sendo construída na interseção entre desenvolvimento, analytics, automação e inteligência artificial.
+                                Hoje, concentro essa atuação na EBS IT, em um contexto profissional que exige organização, leitura técnica e capacidade de execução.
+                            </p>
+                            <p>
+                                A graduação em Sistemas de Informação na UFU complementa essa base com fundamentos de software, lógica, dados e visão sistêmica.
+                                O objetivo não é apenas acumular tecnologias, mas desenvolver repertório para atuar com mais maturidade, contexto e consistência.
+                            </p>
+                            <p>
+                                Busco consolidar um perfil de tecnologia que una boa base técnica, aprendizado contínuo e capacidade de transformar demandas em soluções claras,
+                                úteis e bem estruturadas.
+                            </p>
+                        </article>
+
+                        <article class="surface-card surface-card--accent reveal">
+                            <h3>Perfil profissional</h3>
+                            <ul class="detail-list">
+                                <li>Atuação atual em IA e Analytics na EBS IT</li>
+                                <li>Formação em Sistemas de Informação na UFU</li>
+                                <li>Interesse contínuo por desenvolvimento, dados e automação</li>
+                                <li>Início de carreira com foco em crescimento técnico consistente</li>
+                            </ul>
+                            <p class="surface-card__note">19 anos, com foco em construir uma trajetória sólida e progressiva em tecnologia.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="experiencia">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Experiência</p>
+                        <h2>Atuação atual na EBS IT com base em analytics, automação, dados e inteligência artificial.</h2>
+                    </div>
+
+                    <div class="experience-grid">
+                        <article class="surface-card surface-card--accent experience-card experience-card--primary reveal">
+                            <div class="experience-card__header">
+                                <div>
+                                    <p class="experience-card__eyebrow">Experiência atual</p>
+                                    <h3>Analista de IA e Analytics</h3>
+                                </div>
+                                <span class="experience-card__company">EBS IT</span>
+                            </div>
+
+                            <p class="experience-card__lead">
+                                Na EBS IT, atuo em modelo remoto apoiando frentes ligadas a inteligência artificial, analytics, dados e automação.
+                                É uma experiência que vem consolidando meu contato com demandas reais, rotina profissional e construção de soluções com foco prático.
+                            </p>
+
+                            <div class="experience-columns">
+                                <div>
+                                    <h4>Frentes de atuação</h4>
+                                    <ul class="detail-list detail-list--compact">
+                                        <li>Analytics e organização de informações para suporte a leituras orientadas por dados</li>
+                                        <li>Automação de processos e rotinas com foco em eficiência e consistência operacional</li>
+                                        <li>Uso aplicado de inteligência artificial em contextos e demandas profissionais</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4>Construção de repertório</h4>
+                                    <ul class="detail-list detail-list--compact">
+                                        <li>Contato com contexto corporativo, trabalho remoto e dinâmica de time</li>
+                                        <li>Desenvolvimento de visão técnica conectada a aplicação prática</li>
+                                        <li>Evolução contínua entre formação acadêmica e atuação profissional</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="experience-stack">
+                            <article class="surface-card reveal experience-card">
+                                <h3>Contexto de trabalho</h3>
+                                <ul class="detail-list detail-list--compact">
+                                    <li>Empresa atual: EBS IT</li>
+                                    <li>Modelo de atuação: remoto</li>
+                                    <li>Foco profissional: IA, Analytics, dados e automação</li>
+                                </ul>
+                            </article>
+
+                            <article class="surface-card reveal experience-card">
+                                <h3>Direção de carreira</h3>
+                                <p>
+                                    Meu foco é ampliar a interseção entre desenvolvimento, dados e inteligência artificial, consolidando uma base profissional cada vez mais madura
+                                    para atuar em times de tecnologia com mais profundidade e responsabilidade.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--projects" id="projetos">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Projetos</p>
+                        <h2>Projetos apresentados com mais contexto, clareza de objetivo e leitura prática de entrega.</h2>
+                    </div>
+
+                    <div class="projects-grid">
+                        <article class="project-card reveal">
+                            <div class="project-card__top">
+                                <p class="project-card__eyebrow">Estudo de caso resumido</p>
+                                <span class="project-card__badge">GitHub</span>
+                            </div>
+
+                            <h3>Sistema Clínica Veterinária</h3>
+                            <p class="project-card__summary">
+                                Sistema desenvolvido para apoiar a gestão de uma clínica veterinária, organizando consultas, relatórios e rotinas administrativas
+                                em uma estrutura mais clara para o dia a dia da operação.
+                            </p>
+
+                            <div class="project-card__insights">
+                                <div class="project-card__group">
+                                    <span class="project-card__label">Contexto</span>
+                                    <p>
+                                        Projeto voltado à organização operacional de uma clínica, com foco em centralizar informações importantes em um único fluxo de gestão.
+                                    </p>
+                                </div>
+
+                                <div class="project-card__group">
+                                    <span class="project-card__label">Entregas</span>
+                                    <ul class="project-card__list">
+                                        <li>Cadastro de consultas</li>
+                                        <li>Geração de relatórios</li>
+                                        <li>Apoio às rotinas administrativas</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="project-card__footer">
+                                <span class="project-card__tag">Sistema de gestão</span>
+                                <a class="button button--ghost" href="https://github.com/ferreiradev7/sistema-clinica-veterinaria" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.576v-2.235c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.305 3.492.998.108-.776.418-1.305.763-1.604-2.665-.305-5.467-1.334-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.53 11.53 0 0 1 12 6.844c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.768.84 1.235 1.911 1.235 3.221 0 4.609-2.806 5.626-5.479 5.921.431.372.824 1.103.824 2.223v3.293c0 .318.192.688.801.576C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12Z"></path>
+                                    </svg>
+                                    Ver projeto no GitHub
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="project-card project-card--placeholder reveal">
+                            <div class="project-card__top">
+                                <p class="project-card__eyebrow">Próximos estudos de caso</p>
+                                <span class="project-card__badge">Em expansão</span>
+                            </div>
+
+                            <h3>Espaço preparado para novos projetos</h3>
+                            <p class="project-card__summary">
+                                A estrutura desta seção já está pronta para receber futuras publicações do GitHub com a mesma lógica de apresentação:
+                                contexto, objetivo, entregas e posicionamento técnico.
+                            </p>
+
+                            <ul class="project-card__list">
+                                <li>Projetos de desenvolvimento e produto</li>
+                                <li>Estudos ligados a dados, automação e IA</li>
+                                <li>Evolução contínua do portfólio com leitura mais profissional</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="habilidades">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Stack técnico</p>
+                        <h2>Repertório organizado por frentes de atuação, base de desenvolvimento e suporte profissional.</h2>
+                    </div>
+
+                    <div class="pill-grid">
+                        <article class="skill-card reveal">
+                            <span class="skill-card__index">01</span>
+                            <h3>Dados, IA e automação</h3>
+                            <p>Atuação orientada a analytics, leitura de informações, eficiência operacional e uso aplicado de inteligência artificial.</p>
+                            <div class="tag-row" aria-label="Áreas de atuação">
+                                <span>Analytics</span>
+                                <span>Dados</span>
+                                <span>Automação</span>
+                                <span>IA</span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card reveal">
+                            <span class="skill-card__index">02</span>
+                            <h3>Front-end</h3>
+                            <p>Construção de interfaces web com foco em estrutura visual, componentização e consistência de experiência.</p>
+                            <div class="tag-row" aria-label="Tecnologias de front-end">
+                                <span>React.js</span>
+                                <span>Tailwind CSS</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card reveal">
+                            <span class="skill-card__index">03</span>
+                            <h3>Fundamentos de software</h3>
+                            <p>Base construída em lógica, estrutura de desenvolvimento e resolução de problemas com linguagens de baixo nível.</p>
+                            <div class="tag-row" aria-label="Linguagens de base">
+                                <span>C</span>
+                                <span>C++</span>
+                            </div>
+                        </article>
+
+                        <article class="skill-card reveal">
+                            <span class="skill-card__index">04</span>
+                            <h3>Inglês técnico</h3>
+                            <p>Leitura, escrita e compreensão aplicadas a documentação, pesquisa e comunicação em contexto profissional.</p>
+                            <div class="tag-row" aria-label="Aplicações do inglês técnico">
+                                <span>Leitura</span>
+                                <span>Escrita</span>
+                                <span>Documentação</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="qualidade">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Diferenciais</p>
+                        <h2>Características que reforçam minha atuação em ambientes de tecnologia e times orientados à execução.</h2>
+                    </div>
+
+                    <div class="pill-grid">
+                        <article class="quality-card reveal">
+                            <span class="quality-card__index">01</span>
+                            <h3>Clareza técnica</h3>
+                            <p>Procuro organizar informações, alinhar contexto e comunicar ideias com objetividade.</p>
+                        </article>
+
+                        <article class="quality-card reveal">
+                            <span class="quality-card__index">02</span>
+                            <h3>Aprendizado com aplicação</h3>
+                            <p>Busco evoluir rápido, mas com foco em entendimento real e uso prático no trabalho.</p>
+                        </article>
+
+                        <article class="quality-card reveal">
+                            <span class="quality-card__index">03</span>
+                            <h3>Colaboração confiável</h3>
+                            <p>Valorizo alinhamento, responsabilidade e boa relação com o time para sustentar entregas consistentes.</p>
+                        </article>
+
+                        <article class="quality-card reveal">
+                            <span class="quality-card__index">04</span>
+                            <h3>Postura analítica</h3>
+                            <p>Tenho interesse por contextos que exigem raciocínio estruturado, leitura de cenário e tomada de decisão com base em dados.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--contact" id="contato">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="section-label">Contato</p>
+                        <h2>Aberto a conexões, oportunidades e conversas relevantes em tecnologia, dados e inteligência artificial.</h2>
+                    </div>
+
+                    <article class="contact-card reveal">
+                        <div class="contact-card__header">
+                            <p class="contact-card__intro">
+                                <strong>Vamos conversar com objetividade.</strong> Se fizer sentido conectar meu momento profissional às necessidades do seu time ou projeto,
+                                estou disponível para falar sobre oportunidades, networking e colaboração.
+                            </p>
+
+                            <div class="contact-card__summary">
+                                <span>Foco atual</span>
+                                <p>IA, Analytics, desenvolvimento e automação com base em contexto profissional real.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card__actions">
+                            <a class="button button--primary" href="https://www.linkedin.com/in/humberto-pimenta" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.346V9h3.414v1.561h.047c.476-.9 1.637-1.85 3.37-1.85 3.605 0 4.27 2.372 4.27 5.456v6.285ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.556V9h3.563v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"></path>
+                                </svg>
+                                LinkedIn
+                            </a>
+
+                            <a class="button button--secondary" href="https://github.com/ferreiradev7" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.576v-2.235c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.305 3.492.998.108-.776.418-1.305.763-1.604-2.665-.305-5.467-1.334-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.53 11.53 0 0 1 12 6.844c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.768.84 1.235 1.911 1.235 3.221 0 4.609-2.806 5.626-5.479 5.921.431.372.824 1.103.824 2.223v3.293c0 .318.192.688.801.576C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12Z"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+
+                        <div class="contact-card__email">
+                            <span>E-mail direto</span>
+                            <a href="mailto:humbertopferreiraf@gmail.com">humbertopferreiraf@gmail.com</a>
+                        </div>
+                    </article>
                 </div>
             </section>
         </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <p>&copy; <span id="current-year">2026</span> Humberto Pimenta. Portfólio profissional.</p>
+                <a class="site-footer__link" href="#hero">Voltar ao topo</a>
+            </div>
+        </footer>
     </div>
-
 </body>
-
 </html>
