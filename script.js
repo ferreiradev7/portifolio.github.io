@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTop();
     initRevealAnimations();
     initSectionTracking();
+    initCardInteractions();
     initAvatarTransition();
     initI18n();
 });
@@ -171,8 +172,8 @@ function initRevealAnimations() {
             observer.unobserve(entry.target);
         });
     }, {
-        threshold: 0.18,
-        rootMargin: "0px 0px -10% 0px"
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px"
     });
 
     revealElements.forEach((element) => {
@@ -184,11 +185,24 @@ function initSectionTracking() {
     const sections = document.querySelectorAll("main section[id]");
     const navLinks = document.querySelectorAll(".site-nav__link");
 
-    if (!sections.length || !navLinks.length || !("IntersectionObserver" in window)) {
-        return;
-    }
+    if (!sections.length || !navLinks.length) return;
+
+    const trackedIds = new Set();
+    navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) trackedIds.add(href.slice(1));
+    });
+
+    const trackedSections = [...sections].filter((s) => trackedIds.has(s.id));
+    if (!trackedSections.length) return;
+
+    let currentActive = null;
+    let scrollTicking = false;
 
     const setActiveLink = (sectionId) => {
+        if (currentActive === sectionId) return;
+        currentActive = sectionId;
+
         navLinks.forEach((link) => {
             const isActive = link.getAttribute("href") === `#${sectionId}`;
             link.classList.toggle("is-active", isActive);
@@ -201,21 +215,115 @@ function initSectionTracking() {
         });
     };
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        const visibleEntries = entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((entryA, entryB) => entryB.intersectionRatio - entryA.intersectionRatio);
+    const updateActiveSection = () => {
+        const headerHeight = parseInt(
+            getComputedStyle(document.documentElement).getPropertyValue("--header-height")
+        ) || 88;
 
-        if (visibleEntries.length > 0) {
-            setActiveLink(visibleEntries[0].target.id);
+        const visibleTop = window.scrollY + headerHeight;
+        const visibleHeight = window.innerHeight - headerHeight;
+        const detectionPoint = visibleTop + visibleHeight * 0.18;
+
+        let activeSection = null;
+
+        for (const section of trackedSections) {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            if (sectionTop <= detectionPoint) {
+                activeSection = section;
+            }
         }
-    }, {
-        threshold: [0.2, 0.45, 0.7],
-        rootMargin: "-35% 0px -45% 0px"
+
+        if (!activeSection && trackedSections.length > 0) {
+            const firstRect = trackedSections[0].getBoundingClientRect();
+            if (firstRect.top < window.innerHeight) {
+                activeSection = trackedSections[0];
+            }
+        }
+
+        if (activeSection) setActiveLink(activeSection.id);
+
+        scrollTicking = false;
+    };
+
+    window.addEventListener("scroll", () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(updateActiveSection);
+            scrollTicking = true;
+        }
+    }, { passive: true });
+
+    updateActiveSection();
+}
+
+function initCardInteractions() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const interactiveCards = document.querySelectorAll(
+        ".surface-card, .project-card, .skill-card, .quality-card, .contact-card"
+    );
+
+    interactiveCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            card.style.setProperty("--mouse-x", x + "px");
+            card.style.setProperty("--mouse-y", y + "px");
+
+            if (window.innerWidth > 860) {
+                const rotateX = ((y - centerY) / centerY) * -2.5;
+                const rotateY = ((x - centerX) / centerX) * 2.5;
+                card.style.transform =
+                    `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.008)`;
+            }
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+            card.style.removeProperty("--mouse-x");
+            card.style.removeProperty("--mouse-y");
+        });
+
+        card.addEventListener("mouseenter", () => {
+            card.style.transition = "border-color 0.3s ease, box-shadow 0.4s ease";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transition = "";
+        });
     });
 
-    sections.forEach((section) => {
-        sectionObserver.observe(section);
+    const heroHighlights = document.querySelectorAll(".hero__highlights li");
+    heroHighlights.forEach((li) => {
+        li.addEventListener("mousemove", (e) => {
+            if (window.innerWidth <= 860) return;
+            const rect = li.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -3;
+            const rotateY = ((x - centerX) / centerX) * 3;
+            li.style.transform =
+                `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.02)`;
+        });
+
+        li.addEventListener("mouseleave", () => {
+            li.style.transform = "";
+        });
+    });
+
+    const detailItems = document.querySelectorAll(".detail-list li");
+    detailItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            item.style.transform = "translateX(6px)";
+        });
+        item.addEventListener("mouseleave", () => {
+            item.style.transform = "";
+        });
     });
 }
 
@@ -417,7 +525,7 @@ const translations = {
         "exp.col1Title": "O que faço",
         "exp.col1_1": "Tratamento e análise de dados para apoiar decisões",
         "exp.col1_2": "Automação de processos",
-        "exp.col1_3": "Aplicação de IA em problemas de negócio",
+        "exp.col1_3": "Aplicação de IA em problemas de negóio",
         "exp.col2Title": "Como trabalho",
         "exp.col2_1": "Trabalho remoto em ambiente corporativo",
         "exp.col2_2": "Entregas em equipe, com prazos reais",
@@ -447,7 +555,7 @@ const translations = {
         "skills.s2Title": "Backend e programação",
         "skills.s2Desc": "C e C++ foram meu primeiro contato real com programação. Também trabalho com Java.",
         "skills.s3Title": "Dados e IA",
-        "skills.s3Desc": "Na EBS IT, aplico analytics e IA a problemas reais de negócio.",
+        "skills.s3Desc": "Na EBS IT, aplico analytics e IA a problemas reais de negóio.",
         "skills.s4Title": "Inglês",
         "skills.s4Desc": "Leio documentação e me comunico em inglês no contexto profissional.",
         "skills.tagData": "Dados",
