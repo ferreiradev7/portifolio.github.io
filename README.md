@@ -75,6 +75,7 @@
 ├── script.js             # interações, animações e traduções PT/EN
 ├── imagens/
 │   ├── fotoportifolio.jpg
+│   ├── og-image.jpg      # prévia ao compartilhar o link (LinkedIn, WhatsApp…)
 │   └── icons/            # favicon de terminal (SVG, ICO e PNG)
 └── .github/readme/       # imagens usadas neste README
 ```
