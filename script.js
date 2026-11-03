@@ -84,11 +84,7 @@ function initMobileNav() {
             backdrop.classList.toggle("is-visible", isOpen);
         }
 
-        if (isOpen) {
-            navToggle.setAttribute("aria-label", "Fechar menu");
-        } else {
-            navToggle.setAttribute("aria-label", "Abrir menu");
-        }
+        navToggle.setAttribute("aria-label", t(isOpen ? "nav.close" : "nav.open"));
     };
 
     navToggle.addEventListener("click", () => {
@@ -481,6 +477,15 @@ function initAvatarTransition() {
 
 const I18N_STORAGE_KEY = "hp-portfolio-lang";
 
+function getCurrentLang() {
+    return document.documentElement.lang === "en" ? "en" : "pt";
+}
+
+function t(key) {
+    const dict = translations[getCurrentLang()] || translations.pt;
+    return dict[key] || translations.pt[key] || "";
+}
+
 const translations = {
     pt: {
         skipLink: "Pular para o conteúdo",
@@ -492,6 +497,9 @@ const translations = {
         "nav.skills": "Stack",
         "nav.profile": "Perfil",
         "nav.contact": "Contato",
+        "nav.ariaLabel": "Navegação principal",
+        "nav.open": "Abrir menu",
+        "nav.close": "Fechar menu",
 
         "hero.label": "Portfólio",
         "hero.role": "Desenvolvedor full stack e analista de IA & Analytics — EBS IT",
@@ -501,6 +509,8 @@ const translations = {
         "hero.hl1": "IA, Analytics e automação",
         "hero.hl2": "Sistemas de Informação",
         "hero.photoAlt": "Retrato de Humberto Pimenta",
+        "hero.highlightsLabel": "Destaques do perfil",
+        "hero.panelLabel": "Resumo profissional",
         "hero.panelKicker": "Hoje",
         "hero.panelTitle": "Full stack, com dia a dia em IA e analytics.",
         "hero.focus1": "IA e Analytics na EBS IT",
@@ -562,6 +572,10 @@ const translations = {
         "skills.tagAutomation": "Automação",
         "skills.tagDocs": "Documentação",
         "skills.tagReading": "Leitura técnica",
+        "skills.s1Tags": "Tecnologias de frontend",
+        "skills.s2Tags": "Linguagens de backend",
+        "skills.s3Tags": "Áreas de atuação",
+        "skills.s4Tags": "Aplicações",
 
         "profile.label": "Como trabalho",
         "profile.title": "Meu jeito de trabalhar.",
@@ -595,6 +609,9 @@ const translations = {
         "nav.skills": "Stack",
         "nav.profile": "Profile",
         "nav.contact": "Contact",
+        "nav.ariaLabel": "Main navigation",
+        "nav.open": "Open menu",
+        "nav.close": "Close menu",
 
         "hero.label": "Portfolio",
         "hero.role": "Full stack developer & AI/Analytics analyst — EBS IT",
@@ -604,6 +621,8 @@ const translations = {
         "hero.hl1": "AI, Analytics & automation",
         "hero.hl2": "Information Systems",
         "hero.photoAlt": "Portrait of Humberto Pimenta",
+        "hero.highlightsLabel": "Profile highlights",
+        "hero.panelLabel": "Professional summary",
         "hero.panelKicker": "Today",
         "hero.panelTitle": "Full stack, with daily work in AI and analytics.",
         "hero.focus1": "AI & Analytics at EBS IT",
@@ -665,6 +684,10 @@ const translations = {
         "skills.tagAutomation": "Automation",
         "skills.tagDocs": "Documentation",
         "skills.tagReading": "Technical reading",
+        "skills.s1Tags": "Frontend technologies",
+        "skills.s2Tags": "Backend languages",
+        "skills.s3Tags": "Areas of work",
+        "skills.s4Tags": "Uses",
 
         "profile.label": "How I work",
         "profile.title": "My approach to work.",
@@ -701,7 +724,7 @@ function initI18n() {
         // Mouse em "PT" ou "EN" escolhe aquele idioma; teclado (Enter/Espaço)
         // ou clique fora das siglas alterna para o outro idioma.
         const clickedBtn = e.target.closest(".lang-toggle__btn");
-        const currentLang = document.documentElement.lang === "en" ? "en" : "pt";
+        const currentLang = getCurrentLang();
         const lang = clickedBtn
             ? clickedBtn.getAttribute("data-lang")
             : (currentLang === "pt" ? "en" : "pt");
@@ -733,9 +756,17 @@ function applyLanguage(lang, toggle) {
         }
     });
 
-    const backToTopBtn = document.getElementById("back-to-top");
-    if (backToTopBtn && translations[lang]["backToTop.ariaLabel"]) {
-        backToTopBtn.setAttribute("aria-label", translations[lang]["backToTop.ariaLabel"]);
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-alt");
+        if (translations[lang][key]) {
+            el.setAttribute("alt", translations[lang][key]);
+        }
+    });
+
+    const navToggle = document.querySelector(".nav-toggle");
+    if (navToggle) {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-label", translations[lang][isOpen ? "nav.close" : "nav.open"]);
     }
 
     const titleTranslations = {

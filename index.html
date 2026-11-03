@@ -30,14 +30,14 @@
                     <span class="lang-toggle__sep" aria-hidden="true">/</span>
                     <span class="lang-toggle__btn" data-lang="en">EN</span>
                 </button>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menu">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-i18n-aria-label="nav.open" aria-label="Abrir menu">
                     <span class="nav-toggle__line"></span>
                     <span class="nav-toggle__line"></span>
                     <span class="nav-toggle__line"></span>
                 </button>
             </div>
 
-            <nav class="site-nav" id="primary-navigation" aria-label="Navegação principal">
+            <nav class="site-nav" id="primary-navigation" data-i18n-aria-label="nav.ariaLabel" aria-label="Navegação principal">
                 <a class="site-nav__link" href="#sobre" data-i18n="nav.about">Sobre</a>
                 <a class="site-nav__link" href="#experiencia" data-i18n="nav.experience">Experiência</a>
                 <a class="site-nav__link" href="#projetos" data-i18n="nav.projects">Projetos</a>
@@ -66,7 +66,7 @@
                             <a class="button button--secondary" href="#contato" data-i18n="hero.ctaContact">Entrar em contato</a>
                         </div>
 
-                        <ul class="hero__highlights" aria-label="Destaques do perfil">
+                        <ul class="hero__highlights" data-i18n-aria-label="hero.highlightsLabel" aria-label="Destaques do perfil">
                             <li>
                                 <strong>EBS IT</strong>
                                 <span data-i18n="hero.hl1">IA, Analytics e automação</span>
@@ -82,9 +82,9 @@
                         </ul>
                     </div>
 
-                    <article class="hero__panel reveal" aria-label="Resumo profissional">
+                    <article class="hero__panel reveal" data-i18n-aria-label="hero.panelLabel" aria-label="Resumo profissional">
                         <div class="hero__photo-frame">
-                            <img class="hero__photo" src="imagens/fotoportifolio.jpg" data-i18n-aria-label="hero.photoAlt" alt="Retrato de Humberto Pimenta">
+                            <img class="hero__photo" src="imagens/fotoportifolio.jpg" data-i18n-alt="hero.photoAlt" alt="Retrato de Humberto Pimenta">
                         </div>
                         <div class="hero__panel-content">
                             <p class="hero__panel-kicker" data-i18n="hero.panelKicker">Hoje</p>
@@ -247,7 +247,7 @@
                             <span class="skill-card__index">01</span>
                             <h3 data-i18n="skills.s1Title">Frontend</h3>
                             <p data-i18n="skills.s1Desc">Minha área mais forte. Uso ReactJS e Tailwind CSS diariamente — HTML como base de tudo.</p>
-                            <div class="tag-row" aria-label="Tecnologias de frontend">
+                            <div class="tag-row" data-i18n-aria-label="skills.s1Tags" aria-label="Tecnologias de frontend">
                                 <span>ReactJS</span>
                                 <span>Tailwind CSS</span>
                                 <span>HTML</span>
@@ -258,7 +258,7 @@
                             <span class="skill-card__index">02</span>
                             <h3 data-i18n="skills.s2Title">Backend e programação</h3>
                             <p data-i18n="skills.s2Desc">C e C++ foram meu primeiro contato real com programação. Também trabalho com Java.</p>
-                            <div class="tag-row" aria-label="Linguagens de backend">
+                            <div class="tag-row" data-i18n-aria-label="skills.s2Tags" aria-label="Linguagens de backend">
                                 <span>C</span>
                                 <span>C++</span>
                                 <span>Java</span>
@@ -269,7 +269,7 @@
                             <span class="skill-card__index">03</span>
                             <h3 data-i18n="skills.s3Title">Dados e IA</h3>
                             <p data-i18n="skills.s3Desc">Na EBS IT, aplico analytics e IA a problemas reais de negócio.</p>
-                            <div class="tag-row" aria-label="Áreas de atuação">
+                            <div class="tag-row" data-i18n-aria-label="skills.s3Tags" aria-label="Áreas de atuação">
                                 <span>Analytics</span>
                                 <span data-i18n="skills.tagData">Dados</span>
                                 <span data-i18n="skills.tagAutomation">Automação</span>
@@ -281,7 +281,7 @@
                             <span class="skill-card__index">04</span>
                             <h3 data-i18n="skills.s4Title">Inglês</h3>
                             <p data-i18n="skills.s4Desc">Leio documentação e me comunico em inglês no contexto profissional.</p>
-                            <div class="tag-row" aria-label="Aplicações">
+                            <div class="tag-row" data-i18n-aria-label="skills.s4Tags" aria-label="Aplicações">
                                 <span data-i18n="skills.tagDocs">Documentação</span>
                                 <span data-i18n="skills.tagReading">Leitura técnica</span>
                             </div>
@@ -375,7 +375,7 @@
             </div>
         </footer>
 
-        <button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo">
+        <button class="back-to-top" id="back-to-top" type="button" data-i18n-aria-label="backToTop.ariaLabel" aria-label="Voltar ao topo">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="20" height="20">
                 <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 15l-6-6-6 6"/>
             </svg>
