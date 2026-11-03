@@ -477,126 +477,12 @@ function initAvatarTransition() {
 
 const I18N_STORAGE_KEY = "hp-portfolio-lang";
 
-function getCurrentLang() {
-    return document.documentElement.lang === "en" ? "en" : "pt";
-}
-
-function t(key) {
-    const dict = translations[getCurrentLang()] || translations.pt;
-    return dict[key] || translations.pt[key] || "";
-}
-
+// O português vem do próprio HTML (fonte única): captureDefaultTexts() lê os
+// textos da página ao carregar. Aqui ficam só o inglês e os poucos textos em
+// português que não aparecem no HTML inicial.
 const translations = {
     pt: {
-        skipLink: "Pular para o conteúdo",
-        brandAlt: "Ir para o topo",
-
-        "nav.about": "Sobre",
-        "nav.experience": "Experiência",
-        "nav.projects": "Projetos",
-        "nav.skills": "Stack",
-        "nav.profile": "Perfil",
-        "nav.contact": "Contato",
-        "nav.ariaLabel": "Navegação principal",
-        "nav.open": "Abrir menu",
-        "nav.close": "Fechar menu",
-
-        "hero.label": "Portfólio",
-        "hero.role": "Desenvolvedor full stack e analista de IA & Analytics — EBS IT",
-        "hero.lead": "Trabalho com desenvolvimento, dados e inteligência artificial. Sou formado em Sistemas de Informação pela UFU, tenho mais vivência em frontend, e hoje atuo com IA e analytics na EBS IT.",
-        "hero.ctaExperience": "Ver experiência",
-        "hero.ctaContact": "Entrar em contato",
-        "hero.hl1": "IA, Analytics e automação",
-        "hero.hl2": "Sistemas de Informação",
-        "hero.photoAlt": "Retrato de Humberto Pimenta",
-        "hero.highlightsLabel": "Destaques do perfil",
-        "hero.panelLabel": "Resumo profissional",
-        "hero.panelKicker": "Hoje",
-        "hero.panelTitle": "Full stack, com dia a dia em IA e analytics.",
-        "hero.focus1": "IA e Analytics na EBS IT",
-        "hero.focus2": "Sistemas de Informação — UFU",
-        "hero.focus3": "Full stack, mais forte em frontend",
-
-        "about.label": "Sobre",
-        "about.title": "Entre código, dados e IA.",
-        "about.p1": "Hoje trabalho como analista de IA e Analytics na EBS IT, remotamente. Minha formação é em Sistemas de Informação pela UFU — um curso que me deu base tanto em programação quanto em pensamento analítico, e isso se reflete no que eu faço agora.",
-        "about.p2": "Tenho mais prática em frontend — trabalho com ReactJS e Tailwind CSS no dia a dia — mas minha base inclui C, C++ e Java. Na EBS IT, expando essa base para dados e IA. O objetivo é juntar tudo isso em entregas que resolvam algo de verdade.",
-        "about.synthesisTitle": "Resumo",
-        "about.synth1": "Analista de IA e Analytics na EBS IT",
-        "about.synth2": "Sistemas de Informação pela UFU",
-        "about.synth3": "Full stack com mais vivência em frontend",
-        "about.synth4": "Stack: ReactJS, Tailwind CSS, HTML, C, C++ e Java",
-
-        "exp.label": "Experiência",
-        "exp.title": "IA, analytics e automação na EBS IT.",
-        "exp.eyebrow": "Cargo atual",
-        "exp.role": "Analista de IA e Analytics",
-        "exp.lead": "Na EBS IT, trabalho remotamente com inteligência artificial, analytics e automação. É um ambiente onde consigo aplicar o que sei em problemas reais — e aprender rápido no processo.",
-        "exp.col1Title": "O que faço",
-        "exp.col1_1": "Tratamento e análise de dados para apoiar decisões",
-        "exp.col1_2": "Automação de processos",
-        "exp.col1_3": "Aplicação de IA em problemas de negócio",
-        "exp.col2Title": "Como trabalho",
-        "exp.col2_1": "Trabalho remoto em ambiente corporativo",
-        "exp.col2_2": "Entregas em equipe, com prazos reais",
-        "exp.col2_3": "Aprendizado contínuo entre o que estudei e o que o mercado pede",
-        "exp.directionTitle": "Pra onde vou",
-        "exp.directionDesc": "Quero crescer na junção entre desenvolvimento e IA — construindo uma base técnica forte para contribuir em times de tecnologia cada vez melhor.",
-
-        "proj.label": "Projetos",
-        "proj.title": "Projetos que construí.",
-        "proj.github": "Ver no GitHub",
-
-        "proj1.eyebrow": "Sistema de gestão",
-        "proj1.name": "Clínica Veterinária",
-        "proj1.summary": "Sistema para organizar a rotina de uma clínica veterinária. Consultas, relatórios e processos administrativos centralizados em um só lugar.",
-        "proj1.scopeLabel": "Objetivo",
-        "proj1.scopeDesc": "Centralizar as informações da clínica para facilitar o controle operacional e a geração de relatórios.",
-        "proj1.featuresLabel": "Funcionalidades",
-        "proj1.feat1": "Cadastro e controle de consultas",
-        "proj1.feat2": "Geração de relatórios",
-        "proj1.feat3": "Organização de rotinas administrativas",
-        "proj1.tag": "Gestão · Backend",
-
-        "skills.label": "Stack técnico",
-        "skills.title": "O que uso no dia a dia.",
-        "skills.s1Title": "Frontend",
-        "skills.s1Desc": "Minha área mais forte. Uso ReactJS e Tailwind CSS diariamente — HTML como base de tudo.",
-        "skills.s2Title": "Backend e programação",
-        "skills.s2Desc": "C e C++ foram meu primeiro contato real com programação. Também trabalho com Java.",
-        "skills.s3Title": "Dados e IA",
-        "skills.s3Desc": "Na EBS IT, aplico analytics e IA a problemas reais de negócio.",
-        "skills.s4Title": "Inglês",
-        "skills.s4Desc": "Leio documentação e me comunico em inglês no contexto profissional.",
-        "skills.tagData": "Dados",
-        "skills.tagAutomation": "Automação",
-        "skills.tagDocs": "Documentação",
-        "skills.tagReading": "Leitura técnica",
-        "skills.s1Tags": "Tecnologias de frontend",
-        "skills.s2Tags": "Linguagens de backend",
-        "skills.s3Tags": "Áreas de atuação",
-        "skills.s4Tags": "Aplicações",
-
-        "profile.label": "Como trabalho",
-        "profile.title": "Meu jeito de trabalhar.",
-        "profile.q1Title": "Entender antes de codar",
-        "profile.q1Desc": "Prefiro entender o problema antes de sair escrevendo código. Simplificar em vez de complicar.",
-        "profile.q2Title": "Comunicação direta",
-        "profile.q2Desc": "Escrevo e falo de forma clara. Prefiro ser entendido de primeira do que ter que explicar duas vezes.",
-        "profile.q3Title": "Entrega com responsabilidade",
-        "profile.q3Desc": "Levo a sério o que me confiam. Faço, reviso e entrego.",
-        "profile.q4Title": "Aprendo fazendo",
-        "profile.q4Desc": "Não espero o curso ideal. Aprendo resolvendo, errando e melhorando no dia a dia.",
-
-        "contact.label": "Contato",
-        "contact.title": "Se quiser trocar uma ideia.",
-        "contact.intro": "Se trabalha com desenvolvimento, dados ou IA e quer conversar, estou aqui. Também estou aberto a oportunidades e parcerias.",
-        "contact.focusLabel": "Foco",
-        "contact.focusDesc": "Desenvolvimento, dados e inteligência artificial.",
-        "contact.emailLabel": "E-mail",
-
-        "footer.backToTop": "Voltar ao topo",
-        "backToTop.ariaLabel": "Voltar ao topo"
+        "nav.close": "Fechar menu"
     },
 
     en: {
@@ -708,17 +594,79 @@ const translations = {
         "contact.emailLabel": "Email",
 
         "footer.backToTop": "Back to top",
-        "backToTop.ariaLabel": "Back to top"
+        "backToTop.ariaLabel": "Back to top",
+
+        "lang.toggle": "Switch language to Portuguese",
+        "meta.title": "Humberto Pimenta | Full Stack Developer & AI",
+        "meta.description": "Portfolio of Humberto Pimenta — full stack developer and AI/Analytics analyst at EBS IT."
     }
 };
+
+function getCurrentLang() {
+    return document.documentElement.lang === "en" ? "en" : "pt";
+}
+
+function t(key) {
+    const dict = translations[getCurrentLang()] || translations.pt;
+    return dict[key] || translations.pt[key] || "";
+}
+
+function readSavedLang() {
+    try {
+        return localStorage.getItem(I18N_STORAGE_KEY);
+    } catch {
+        return null;
+    }
+}
+
+function saveLang(lang) {
+    try {
+        localStorage.setItem(I18N_STORAGE_KEY, lang);
+    } catch {
+        // Armazenamento indisponível (ex.: modo privado); só não lembra a escolha.
+    }
+}
+
+function captureDefaultTexts() {
+    const pt = translations.pt;
+    const clean = (text) => text.replace(/\s+/g, " ").trim();
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+        pt[el.getAttribute("data-i18n")] = clean(el.textContent);
+    });
+
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+        pt[el.getAttribute("data-i18n-aria-label")] = el.getAttribute("aria-label") || "";
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+        pt[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt") || "";
+    });
+
+    pt["meta.title"] = document.title;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        pt["meta.description"] = metaDesc.getAttribute("content") || "";
+    }
+
+    const missing = Object.keys(pt).filter((key) => !(key in translations.en));
+    if (missing.length) {
+        console.warn("[i18n] Textos sem tradução para inglês:", missing);
+    }
+}
 
 function initI18n() {
     const toggle = document.getElementById("lang-toggle");
 
     if (!toggle) return;
 
-    const savedLang = localStorage.getItem(I18N_STORAGE_KEY) || "pt";
-    applyLanguage(savedLang, toggle);
+    captureDefaultTexts();
+
+    const savedLang = readSavedLang();
+    if (savedLang && savedLang !== "pt") {
+        applyLanguage(savedLang, toggle);
+    }
 
     toggle.addEventListener("click", (e) => {
         // Mouse em "PT" ou "EN" escolhe aquele idioma; teclado (Enter/Espaço)
@@ -736,65 +684,46 @@ function initI18n() {
 }
 
 function applyLanguage(lang, toggle) {
-    if (!translations[lang]) return;
+    const dict = translations[lang];
+    if (!dict) return;
 
     document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
 
-    const dataElements = document.querySelectorAll("[data-i18n]");
-    dataElements.forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
-        }
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const text = dict[el.getAttribute("data-i18n")];
+        if (text) el.textContent = text;
     });
 
-    const ariaElements = document.querySelectorAll("[data-i18n-aria-label]");
-    ariaElements.forEach((el) => {
-        const key = el.getAttribute("data-i18n-aria-label");
-        if (translations[lang][key]) {
-            el.setAttribute("aria-label", translations[lang][key]);
-        }
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+        const text = dict[el.getAttribute("data-i18n-aria-label")];
+        if (text) el.setAttribute("aria-label", text);
     });
 
     document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-alt");
-        if (translations[lang][key]) {
-            el.setAttribute("alt", translations[lang][key]);
-        }
+        const text = dict[el.getAttribute("data-i18n-alt")];
+        if (text) el.setAttribute("alt", text);
     });
 
     const navToggle = document.querySelector(".nav-toggle");
     if (navToggle) {
         const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-label", translations[lang][isOpen ? "nav.close" : "nav.open"]);
+        navToggle.setAttribute("aria-label", dict[isOpen ? "nav.close" : "nav.open"]);
     }
 
-    const titleTranslations = {
-        pt: "Humberto Pimenta | Desenvolvedor Full Stack & IA",
-        en: "Humberto Pimenta | Full Stack Developer & AI"
-    };
-    document.title = titleTranslations[lang] || titleTranslations.pt;
+    if (dict["meta.title"]) {
+        document.title = dict["meta.title"];
+    }
 
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-        const descTranslations = {
-            pt: "Portfólio de Humberto Pimenta — desenvolvedor full stack e analista de IA e Analytics na EBS IT.",
-            en: "Portfolio of Humberto Pimenta — full stack developer and AI/Analytics analyst at EBS IT."
-        };
-        metaDesc.setAttribute("content", descTranslations[lang] || descTranslations.pt);
+    if (metaDesc && dict["meta.description"]) {
+        metaDesc.setAttribute("content", dict["meta.description"]);
     }
 
     if (toggle) {
         toggle.querySelectorAll(".lang-toggle__btn").forEach((btn) => {
-            const btnLang = btn.getAttribute("data-lang");
-            btn.classList.toggle("lang-toggle__btn--active", btnLang === lang);
+            btn.classList.toggle("lang-toggle__btn--active", btn.getAttribute("data-lang") === lang);
         });
-
-        toggle.setAttribute(
-            "aria-label",
-            lang === "en" ? "Switch language to Portuguese" : "Mudar idioma para inglês"
-        );
     }
 
-    localStorage.setItem(I18N_STORAGE_KEY, lang);
+    saveLang(lang);
 }
