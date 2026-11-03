@@ -698,10 +698,14 @@ function initI18n() {
     applyLanguage(savedLang, toggle);
 
     toggle.addEventListener("click", (e) => {
+        // Mouse em "PT" ou "EN" escolhe aquele idioma; teclado (Enter/Espaço)
+        // ou clique fora das siglas alterna para o outro idioma.
         const clickedBtn = e.target.closest(".lang-toggle__btn");
-        if (!clickedBtn) return;
+        const currentLang = document.documentElement.lang === "en" ? "en" : "pt";
+        const lang = clickedBtn
+            ? clickedBtn.getAttribute("data-lang")
+            : (currentLang === "pt" ? "en" : "pt");
 
-        const lang = clickedBtn.getAttribute("data-lang");
         if (!lang) return;
 
         applyLanguage(lang, toggle);
@@ -754,6 +758,11 @@ function applyLanguage(lang, toggle) {
             const btnLang = btn.getAttribute("data-lang");
             btn.classList.toggle("lang-toggle__btn--active", btnLang === lang);
         });
+
+        toggle.setAttribute(
+            "aria-label",
+            lang === "en" ? "Switch language to Portuguese" : "Mudar idioma para inglês"
+        );
     }
 
     localStorage.setItem(I18N_STORAGE_KEY, lang);
