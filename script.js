@@ -523,7 +523,7 @@ const translations = {
         "about.synth1": "AI and Analytics Analyst at EBS IT",
         "about.synth2": "B.S. in Information Systems from UFU",
         "about.synth3": "Full stack with more experience in frontend",
-        "about.synth4": "Stack: ReactJS, Tailwind CSS, HTML, C, C++, and Java",
+        "about.synth4": "Stack: ReactJS, Tailwind CSS, HTML, C, C++, Java, SQL, and Python",
 
         "exp.label": "Experience",
         "exp.title": "AI, analytics, and automation at EBS IT.",
@@ -563,7 +563,7 @@ const translations = {
         "skills.s2Title": "Backend and programming",
         "skills.s2Desc": "C and C++ were my first real programming languages. I also work with Java.",
         "skills.s3Title": "Data & AI",
-        "skills.s3Desc": "At EBS IT, I apply analytics and AI to real business problems.",
+        "skills.s3Desc": "At EBS IT, I apply analytics and AI to real business problems, using SQL and Python when the work calls for it.",
         "skills.s4Title": "English",
         "skills.s4Desc": "I read documentation and communicate in English at work.",
         "skills.tagData": "Data",
