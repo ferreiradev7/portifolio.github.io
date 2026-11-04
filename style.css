@@ -1166,9 +1166,34 @@ body::after {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
-    max-width: 680px;
+    align-items: start;
+}
+
+.project-card__stack {
+    margin-top: 0.85rem;
+}
+
+.project-card__note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--color-text-soft);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.project-card__note svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+@media (max-width: 1080px) {
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 680px;
+    }
 }
 
 .project-card {
@@ -1221,6 +1246,8 @@ body::after {
 }
 
 .project-card__badge {
+    flex-shrink: 0;
+    white-space: nowrap;
     padding: 0.42rem 0.8rem;
     border: 1px solid rgba(255, 122, 26, 0.14);
     border-radius: 999px;

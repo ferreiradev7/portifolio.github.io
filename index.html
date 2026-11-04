@@ -25,8 +25,8 @@
     <meta property="og:image:alt" content="Cartão do portfólio de Humberto Pimenta com foto, nome e cargo">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="stylesheet" href="style.css?v=5">
-    <script src="script.js?v=6" defer></script>
+    <link rel="stylesheet" href="style.css?v=6">
+    <script src="script.js?v=8" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#conteudo" data-i18n="skipLink">Pular para o conteúdo</a>
@@ -74,7 +74,7 @@
                         <p class="hero__role accent-text" data-i18n="hero.role">Desenvolvedor full stack e analista de IA & Analytics — EBS IT</p>
                         <p class="hero__lead" data-i18n="hero.lead">
                             Trabalho com desenvolvimento, dados e inteligência artificial.
-                            Sou formado em Sistemas de Informação pela UFU, tenho mais vivência em frontend, e hoje atuo com IA e analytics na EBS IT.
+                            Sou formado em Sistemas de Informação pela UFU, atuo como full stack e hoje trabalho com IA e analytics na EBS IT.
                         </p>
 
                         <div class="hero__actions">
@@ -108,7 +108,7 @@
                             <ul class="hero__focus-list">
                                 <li data-i18n="hero.focus1">IA e Analytics na EBS IT</li>
                                 <li data-i18n="hero.focus2">Sistemas de Informação — UFU</li>
-                                <li data-i18n="hero.focus3">Full stack, mais forte em frontend</li>
+                                <li data-i18n="hero.focus3">Full stack, do front ao back</li>
                             </ul>
                         </div>
                     </article>
@@ -128,8 +128,8 @@
                                 Minha formação é em Sistemas de Informação pela UFU — um curso que me deu base tanto em programação quanto em pensamento analítico, e isso se reflete no que eu faço agora.
                             </p>
                             <p data-i18n="about.p2">
-                                Tenho mais prática em frontend — trabalho com ReactJS e Tailwind CSS no dia a dia — mas minha base inclui C, C++ e Java.
-                                Na EBS IT, expando essa base para dados e IA. O objetivo é juntar tudo isso em entregas que resolvam algo de verdade.
+                                Atuo como full stack: no frontend, com ReactJS e Tailwind CSS; no backend, com Java, sobre uma base que começou em C e C++.
+                                Na EBS IT, levo isso para dados e IA, com SQL e Python. O objetivo é juntar tudo em entregas que resolvam algo de verdade.
                             </p>
                         </article>
 
@@ -138,8 +138,8 @@
                             <ul class="detail-list">
                                 <li data-i18n="about.synth1">Analista de IA e Analytics na EBS IT</li>
                                 <li data-i18n="about.synth2">Sistemas de Informação pela UFU</li>
-                                <li data-i18n="about.synth3">Full stack com mais vivência em frontend</li>
-                                <li data-i18n="about.synth4">Stack: ReactJS, Tailwind CSS, HTML, C, C++ e Java</li>
+                                <li data-i18n="about.synth3">Full stack, do front ao back</li>
+                                <li data-i18n="about.synth4">Stack: ReactJS, Tailwind CSS, HTML, C, C++, Java, SQL e Python</li>
                             </ul>
                         </article>
                     </div>
@@ -210,6 +210,59 @@
                     <div class="projects-grid">
                         <article class="project-card reveal" style="--reveal-delay: 0ms">
                             <div class="project-card__top">
+                                <p class="project-card__eyebrow" data-i18n="proj2.eyebrow">SaaS de gestão</p>
+                                <span class="project-card__badge" data-i18n="proj2.badge">Em desenvolvimento</span>
+                            </div>
+
+                            <h3>OficinaPro</h3>
+                            <p class="project-card__summary" data-i18n="proj2.summary">
+                                Sistema web para oficinas mecânicas pequenas e médias.
+                                Atendimento, orçamento, ordem de serviço, estoque, financeiro, agenda e manutenção preventiva num lugar só, no computador e no celular.
+                            </p>
+
+                            <div class="project-card__insights">
+                                <div class="project-card__group">
+                                    <span class="project-card__label" data-i18n="proj2.scopeLabel">Objetivo</span>
+                                    <p data-i18n="proj2.scopeDesc">
+                                        Organizar o dia a dia da oficina, com os dados de cada oficina isolados e cada usuário vendo só o que o seu perfil permite.
+                                    </p>
+                                </div>
+                                <div class="project-card__group">
+                                    <span class="project-card__label" data-i18n="proj2.featuresLabel">Funcionalidades</span>
+                                    <ul class="project-card__list">
+                                        <li data-i18n="proj2.feat1">Orçamento vira OS com um clique; o fechamento baixa o estoque e gera as contas a receber</li>
+                                        <li data-i18n="proj2.feat2">Financeiro com fluxo de caixa, contas a pagar e receber, DRE e relatórios em Excel, CSV e PDF</li>
+                                        <li data-i18n="proj2.feat3">Alertas de manutenção preventiva por km e tempo, com aviso ao cliente pelo WhatsApp</li>
+                                        <li data-i18n="proj2.feat4">Agenda semanal por mecânico, com aviso de conflito de horário</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card__group">
+                                    <span class="project-card__label" data-i18n="proj2.stackLabel">Stack e qualidade</span>
+                                    <p data-i18n="proj2.stackDesc">CI no GitHub Actions com lint, checagem de tipos e cerca de 240 testes automatizados (unitários, de integração e de API).</p>
+                                    <div class="tag-row project-card__stack" data-i18n-aria-label="proj2.stackTags" aria-label="Tecnologias do OficinaPro">
+                                        <span>Next.js</span>
+                                        <span>React</span>
+                                        <span>TypeScript</span>
+                                        <span>PostgreSQL</span>
+                                        <span>Prisma</span>
+                                        <span>Tailwind CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card__footer">
+                                <span class="project-card__tag" data-i18n="proj2.tag">Full stack · SaaS</span>
+                                <span class="project-card__note">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16">
+                                        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/>
+                                    </svg>
+                                    <span data-i18n="proj2.note">Repositório privado · demonstração sob pedido</span>
+                                </span>
+                            </div>
+                        </article>
+
+                        <article class="project-card reveal" style="--reveal-delay: 100ms">
+                            <div class="project-card__top">
                                 <p class="project-card__eyebrow" data-i18n="proj1.eyebrow">Sistema de gestão</p>
                                 <span class="project-card__badge">GitHub</span>
                             </div>
@@ -262,7 +315,7 @@
                         <article class="skill-card reveal" style="--reveal-delay: 0ms">
                             <span class="skill-card__index">01</span>
                             <h3 data-i18n="skills.s1Title">Frontend</h3>
-                            <p data-i18n="skills.s1Desc">Minha área mais forte. Uso ReactJS e Tailwind CSS diariamente — HTML como base de tudo.</p>
+                            <p data-i18n="skills.s1Desc">Interfaces com ReactJS e Tailwind CSS, tendo HTML como base.</p>
                             <div class="tag-row" data-i18n-aria-label="skills.s1Tags" aria-label="Tecnologias de frontend">
                                 <span>ReactJS</span>
                                 <span>Tailwind CSS</span>
@@ -273,7 +326,7 @@
                         <article class="skill-card reveal" style="--reveal-delay: 80ms">
                             <span class="skill-card__index">02</span>
                             <h3 data-i18n="skills.s2Title">Backend e programação</h3>
-                            <p data-i18n="skills.s2Desc">C e C++ foram meu primeiro contato real com programação. Também trabalho com Java.</p>
+                            <p data-i18n="skills.s2Desc">No backend, trabalho com Java. C e C++ foram minha base em programação.</p>
                             <div class="tag-row" data-i18n-aria-label="skills.s2Tags" aria-label="Linguagens de backend">
                                 <span>C</span>
                                 <span>C++</span>
@@ -284,12 +337,14 @@
                         <article class="skill-card reveal" style="--reveal-delay: 160ms">
                             <span class="skill-card__index">03</span>
                             <h3 data-i18n="skills.s3Title">Dados e IA</h3>
-                            <p data-i18n="skills.s3Desc">Na EBS IT, aplico analytics e IA a problemas reais de negócio.</p>
+                            <p data-i18n="skills.s3Desc">Na EBS IT, aplico analytics e IA a problemas reais de negócio, usando SQL e Python quando o trabalho pede.</p>
                             <div class="tag-row" data-i18n-aria-label="skills.s3Tags" aria-label="Áreas de atuação">
                                 <span>Analytics</span>
                                 <span data-i18n="skills.tagData">Dados</span>
                                 <span data-i18n="skills.tagAutomation">Automação</span>
                                 <span>IA</span>
+                                <span>SQL</span>
+                                <span>Python</span>
                             </div>
                         </article>
 
